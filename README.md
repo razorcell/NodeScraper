@@ -1,7 +1,7 @@
 # NodeScraper
-Basic NodeJs scraping example using remote public proxies or Tor network.
 
-This is an example project for a NodeJs web scraper.
+
+This is an example project for a NodeJs web scraping code.
 
 Main functions are in "Internal_App_Modules" folder.
 
@@ -9,7 +9,21 @@ Functions to download using public proxies are in proxies.js
 
 Functions to download using Tor network are in tor.js
 
-Change the following line with your Tor settings:
+For Proxies you have 2 functions, one for:
+```javascript
+https://free-proxy-list.net/
+```
+the other one for:
+```javascript
+https://www.proxy-list.download/api/v0/get?l=en&t=https
+```
+Default one is getProxylist() for https://free-proxy-list.net/. You can change to the other function by editing this line 
+```javascript
+px_list = await getProxylist();
+```
+in downloadUrlUsingProxy(......)
+
+For Tor, keep in mind to change the following line with your Tor settings:
 
  ```javascript
 let proxy = "socks5://192.168.1.154:9050";
